@@ -67,7 +67,7 @@ svgElements func elements styles = concat $ zipWith func elements styles
 
 main :: IO ()
 main = do
-  writeFile "rects.svg" $ svgstrs
+  writeFile "figs.svg" $ svgstrs
   where svgstrs = svgBegin w h ++ svgfigs ++ svgEnd
         svgfigs = svgElements svgRect rects (map svgStyle palette)
         rects = genRectsInLine nrects
